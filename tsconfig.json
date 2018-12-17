@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "pretty": true,
+    "sourceMap": true,
+    "target": "ESNEXT",
+    "outDir": "./ts-build",
+    "baseUrl": "./src/server",
+    "strict": true,
+  },
+  "include": [
+    "src/server/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
