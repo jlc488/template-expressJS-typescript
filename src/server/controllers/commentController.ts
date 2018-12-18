@@ -1,15 +1,15 @@
 import { Request, Response, NextFunction } from 'express'
 import resp from 'utils/response'
-import { PostService } from 'services/postService'
+import { CommentService } from 'services/commentService'
 
-export class PostController {
-  postService: PostService = new PostService()
+export class CommentController {
+  commentService: CommentService = new CommentService()
 
   public async findById(req: Request, res: Response) {
     try {
       const id = req.params.id
 
-      const ret = await this.postService.findById(id)
+      const ret = await this.commentService.findById(id)
 
       if (ret) {
         resp.sendCreated(res, ret)
@@ -23,7 +23,7 @@ export class PostController {
 
   public async find(req: Request, res: Response) {
     try {
-      const ret = await this.postService.find()
+      const ret = await this.commentService.find()
 
       if (ret) {
         resp.sendCreated(res, ret)
@@ -39,7 +39,7 @@ export class PostController {
     try {
       const obj = req.body
 
-      const ret = await this.postService.save(obj)
+      const ret = await this.commentService.save(obj)
 
       if (ret) {
         resp.sendCreated(res, ret)
@@ -55,7 +55,7 @@ export class PostController {
     try {
       const id = req.params.id
 
-      const ret = await this.postService.remove(id)
+      const ret = await this.commentService.remove(id)
 
       if (ret) {
         resp.sendCreated(res, ret)
@@ -69,4 +69,4 @@ export class PostController {
       resp.sendError(res, err)
     }
   }
-} //end of class
+}

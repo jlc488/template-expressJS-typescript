@@ -5,7 +5,7 @@ export class Resp {
     res.status(201).send(data)
   }
 
-  public setBadRequest(res: Response, message) {
+  public setBadRequest(res: Response, message: string) {
     res.status(400).send({
       success: false,
       message,
@@ -26,7 +26,7 @@ export class Resp {
     })
   }
 
-  public sendError(res: Response, err) {
+  public sendError(res: Response, err: Error) {
     res.status(500).send({
       success: false,
       message: err

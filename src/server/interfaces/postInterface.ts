@@ -1,9 +1,6 @@
-interface ItemInterface {
-    _id: number,
-    title: string,
-    contents: string,
-    createdAt: Date,
-    creator: string,
-    updatedAt: Date,
-    updater: string
+interface PostInterface {
+  _id: number
+  title: string
+  author: string
+  contents: string
 }

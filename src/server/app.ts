@@ -7,7 +7,7 @@ class App {
   public srvRoutes: Routes = new Routes()
 
   constructor() {
-    this.app: any = express()
+    this.app = express()
     this.srvRoutes.setRouter(this.app)
     this.config()
   }

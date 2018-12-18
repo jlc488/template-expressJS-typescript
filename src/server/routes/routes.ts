@@ -1,11 +1,12 @@
-import { ItemController } from 'controllers/postController'
-import { FolderController } from 'controllers/folderController'
+import * as express from 'express'
+import { PostController } from 'controllers/postController'
+import { CommentController } from 'controllers/commentController'
 
 export class Routes {
-  public itemController: ItemController = new ItemController()
+  public itemController: PostController = new PostController()
 
-  public setRouter(app): void {
-    app.route('/').get((req: Request, res: Response) => {
+  public setRouter(app: express.Application): void {
+    app.route('/').get((req: express.Request, res: express.Response) => {
       res.status(200).send({
         message: 'GET request successful! XD',
       })

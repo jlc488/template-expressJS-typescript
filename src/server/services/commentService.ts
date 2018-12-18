@@ -1,11 +1,10 @@
-interface PostInterface {
+interface CommentInterface {
   id: number
-  title: string
-  contents: string
-  author: string
+  body: string
+  postId: number
 }
 
-export class PostService {
+export class CommentService {
   public find(): Promise<any> {
     return new Promise((resolve, reject) => {
       //implement service logic here
@@ -18,7 +17,7 @@ export class PostService {
     })
   }
 
-  public save(postObj: PostInterface): Promise<any> {
+  public save(cmtObj: CommentInterface): Promise<any> {
     return new Promise((resolve, reject) => {
       //implement service logic here
     })
